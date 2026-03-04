@@ -1,10 +1,14 @@
+/* columns block - eSimFLAG style */
+
 .columns > div {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
 .columns img {
   width: 100%;
+  border-radius: var(--border-radius-card);
 }
 
 .columns > div > div {
@@ -19,11 +23,48 @@
   display: block;
 }
 
+/* text column styling */
+.columns h2 {
+  color: var(--heading-color);
+  margin-top: 0;
+}
+
+.columns p {
+  color: var(--text-color);
+}
+
+.columns a:any-link {
+  color: var(--accent-color);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.columns a:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+/* "See return policy" style link with underline */
+.columns a.button.secondary {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--link-color);
+  padding: 0;
+  border-bottom: 1px solid var(--link-color);
+  border-radius: 0;
+}
+
+.columns a.button.secondary:hover {
+  color: var(--link-hover-color);
+  border-bottom-color: var(--link-hover-color);
+  background-color: transparent;
+}
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    gap: 24px;
+    gap: 48px;
   }
 
   .columns > div > div {

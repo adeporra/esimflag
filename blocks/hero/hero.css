@@ -1,3 +1,6 @@
+/* hero block - eSimFLAG style */
+
+/* full-bleed hero section */
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,23 +8,20 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
+  padding: 56px 16px;
+  text-align: center;
+  overflow: hidden;
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
+/* background image */
 .hero picture {
   position: absolute;
   z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
 }
 
 .hero img {
@@ -30,8 +30,55 @@
   height: 100%;
 }
 
+/* content overlay */
+.hero > div:last-child {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  color: var(--heading-color);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.hero .button-wrapper {
+  margin-top: 8px;
+}
+
+.hero a.button {
+  background-color: var(--link-color);
+  border-color: var(--link-color);
+  color: var(--background-color);
+  border-radius: var(--border-radius-pill);
+  padding: 12px 32px;
+  font-size: var(--body-font-size-s);
+}
+
+.hero a.button:hover {
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+}
+
 @media (width >= 900px) {
   .hero {
-    padding: 40px 32px;
+    min-height: 500px;
+    padding: 80px 32px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
   }
 }
