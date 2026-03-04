@@ -1,0 +1,34 @@
+{
+  "templates": [
+    {
+      "name": "esimflag-homepage",
+      "urls": ["https://www.esimflag.com/"],
+      "description": "eSimFLAG homepage with hero, destination cards, benefit cards, feature cards, columns sections, and FAQ accordion",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [".container-searcher"]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            ".c-destinations",
+            "section.c-carousel.c-carousel--bg",
+            "main.home section.c-carousel:not(.c-carousel--bg):not(.c-carousel--image):not(.c-carousel--promos)"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".c-carousel.c-carousel--image.unique-esim--card",
+            "section.c-carousel.c-carousel--image:not(.unique-esim--card)"
+          ]
+        },
+        {
+          "name": "accordion",
+          "instances": [".c-faqs"]
+        }
+      ]
+    }
+  ]
+}
