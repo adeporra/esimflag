@@ -369,8 +369,71 @@ main .section.dark a.button.secondary:focus-visible {
   color: var(--dark-color);
 }
 
+/* Center "See all destinations" button */
+main > .section > div > p:has(> strong > a) {
+  text-align: center;
+  margin-top: 24px;
+}
+
 main .section.gradient {
-  background: url('https://www.esimflag.com/assets/gradient-2Uu5Bg_H.jpg') no-repeat 50% calc(100% - 72px) / 100% 70%;
+  background: linear-gradient(to right, #7b2ff2, #4361ee, #2196f3);
   margin: 0;
   padding: 40px 0;
+  border-radius: var(--border-radius-card);
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+}
+
+main .section.gradient h2,
+main .section.gradient p {
+  color: var(--background-color);
+}
+
+main .section.gradient a:any-link {
+  color: var(--background-color);
+  border: 1px solid var(--background-color);
+  border-radius: var(--border-radius-pill);
+  padding: 8px 24px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: var(--body-font-size-xs);
+}
+
+main .section.gradient a:hover {
+  background-color: rgb(255 255 255 / 15%);
+  text-decoration: none;
+}
+
+/* Promo banner section */
+main .section.promo {
+  margin: 0;
+  padding: 24px 0;
+}
+
+main .section.promo > div {
+  background-color: #eef2fa;
+  border-radius: var(--border-radius-card);
+  padding: 24px 32px;
+  max-width: var(--content-max-width);
+  margin: auto;
+}
+
+main .section.promo h2 {
+  font-size: var(--heading-font-size-l);
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+main .section.promo p strong {
+  color: var(--heading-color);
+}
+
+main .section.promo p:last-child {
+  color: var(--text-color);
+  font-size: var(--body-font-size-xs);
+}
+
+/* Hide metadata block from rendering */
+main .section.metadata-container {
+  display: none;
 }

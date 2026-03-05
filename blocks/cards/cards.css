@@ -67,11 +67,45 @@
   border-color: var(--link-hover-color);
 }
 
+/* Small flag icon cards - images with "flag" in alt text */
+.cards > ul > li img[alt*="flag" i] {
+  width: 48px;
+  height: 32px;
+  aspect-ratio: unset;
+  object-fit: contain;
+  border-radius: 4px;
+  margin: 16px 16px 0;
+}
+
+/* When card has flag image, adjust the card body to inline layout */
+.cards > ul > li:has(img[alt*="flag" i]) {
+  border: 1px solid var(--border-color);
+  box-shadow: none;
+}
+
+.cards > ul > li:has(img[alt*="flag" i]) .cards-card-body a.button {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--heading-color);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  padding: 0;
+}
+
+.cards > ul > li:has(img[alt*="flag" i]) .cards-card-body a.button:hover {
+  color: var(--link-color);
+  background-color: transparent;
+  border-color: transparent;
+}
+
 /* benefit cards (text-only) without images */
 .cards > ul > li:not(:has(.cards-card-image picture)) {
-  padding: 24px;
+  padding: 16px 20px;
   box-shadow: none;
   border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-card);
+  display: flex;
+  align-items: center;
 }
 
 .cards > ul > li:not(:has(.cards-card-image picture)) .cards-card-body {
@@ -81,6 +115,7 @@
 .cards > ul > li:not(:has(.cards-card-image picture)) .cards-card-body p strong {
   color: var(--heading-color);
   font-weight: 500;
+  font-size: var(--body-font-size-xs);
 }
 
 @media (width >= 600px) {
@@ -92,6 +127,6 @@
 
 @media (width >= 900px) {
   .cards > ul {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }

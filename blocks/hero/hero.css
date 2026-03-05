@@ -11,8 +11,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 400px;
-  padding: 56px 16px;
+  min-height: 300px;
+  max-height: 440px;
+  padding: 48px 16px;
   text-align: center;
   overflow: hidden;
 }
@@ -74,11 +75,12 @@
 
 @media (width >= 900px) {
   .hero {
-    min-height: 500px;
-    padding: 80px 32px;
+    min-height: 340px;
+    max-height: 440px;
+    padding: 56px 32px;
   }
 
   .hero h1 {
-    font-size: 48px;
+    font-size: 36px;
   }
 }
