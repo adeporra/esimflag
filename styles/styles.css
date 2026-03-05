@@ -458,6 +458,8 @@ main .section.single-esim .columns-img-col img {
 main .section.promo {
   margin: 0;
   padding: 16px 0;
+  background-color: #e0f7fa;
+  border-radius: var(--border-radius-card);
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -510,9 +512,37 @@ main .section.promo p strong {
   font-weight: 500;
 }
 
+/* Destinations section */
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.destinations h2 {
+  text-align: center;
+}
+
 /* Benefits section - 3x2 grid with icon cards */
 main .section.benefits {
-  padding: 0;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+  background-image: url("https://main--esimflag--adeporra.aem.page/media_157befdc21c4da645f17a38016e1b5f8b8797e285.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  max-width: calc(var(--content-max-width) * 0.8);
+  margin-inline: auto;
+}
+
+main .section.benefits::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 40%);
+  z-index: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.benefits > div {
+  position: relative;
+  z-index: 1;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -520,6 +550,7 @@ main .section.benefits h2 {
   text-align: center;
   font-size: var(--heading-font-size-l);
   margin-bottom: 24px;
+  color: #fff;
 }
 
 main .section.benefits .cards > ul {
