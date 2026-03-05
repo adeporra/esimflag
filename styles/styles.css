@@ -369,8 +369,8 @@ main .section.dark a.button.secondary:focus-visible {
   color: var(--dark-color);
 }
 
-/* Center "See all destinations" button */
-main > .section > div > p:has(> strong > a) {
+/* Center section-level CTA buttons */
+main > .section > div > p.button-wrapper {
   text-align: center;
   margin-top: 24px;
 }
