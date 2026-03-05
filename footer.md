@@ -2,9 +2,9 @@
 
 <div class="app-badges">
 
-[![Download on the App Store](https://www.esimflag.com/assets/app-store-CAMAmrMB.svg)](https://apps.apple.com/app/esimflag/id6467063685)
+[![Download on the App Store](https://www.esimflag.com/assets/app-store-CAMAmrMB.svg)](https://apps.apple.com/es/app/esimflag/id6744964113)
 
-[![Get it on Google Play](https://www.esimflag.com/assets/google-play-CsODxu_L.svg)](https://play.google.com/store/apps/details?id=com.esimflag)
+[![Get it on Google Play](https://www.esimflag.com/assets/google-play-CsODxu_L.svg)](https://play.google.com/store/apps/details?id=com.esimflag.apps.android.development&pcampaignid=web_share)
 
 </div>
 
