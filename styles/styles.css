@@ -510,7 +510,7 @@ main .section.promo p strong {
   font-weight: 500;
 }
 
-/* Benefits section - horizontal scrolling cards */
+/* Benefits section - 3x2 grid with icon cards */
 main .section.benefits {
   padding: 0;
 }
@@ -523,20 +523,48 @@ main .section.benefits h2 {
 }
 
 main .section.benefits .cards > ul {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 12px;
-  grid-template-columns: unset;
-  padding-bottom: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
 main .section.benefits .cards > ul > li {
-  flex: 0 0 auto;
-  min-width: 200px;
-  scroll-snap-align: start;
   border-radius: 20px;
+  padding: 24px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+main .section.benefits .cards .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+main .section.benefits .cards .cards-card-body .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #fce4ec;
+  color: var(--heading-color);
+}
+
+main .section.benefits .cards .cards-card-body .icon img {
+  width: 24px;
+  height: 24px;
+}
+
+main .section.benefits .cards .cards-card-body p strong {
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+}
+
+@media (width >= 900px) {
+  main .section.benefits .cards > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Hide metadata block from rendering */
