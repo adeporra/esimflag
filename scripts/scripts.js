@@ -114,6 +114,31 @@ function decorateButtons(main) {
 }
 
 /**
+ * Adds a copy-to-clipboard button for promo codes in the promo section.
+ * @param {Element} main The main container element
+ */
+function decoratePromoSection(main) {
+  main.querySelectorAll('.section.promo p').forEach((p) => {
+    const text = p.textContent;
+    const codeMatch = text.match(/Code:\s*(\S+)/);
+    if (!codeMatch) return;
+    const code = codeMatch[1];
+    const btn = document.createElement('button');
+    btn.className = 'promo-copy-btn';
+    btn.setAttribute('aria-label', `Copy code ${code}`);
+    btn.title = 'Copy code';
+    btn.innerHTML = '&#x1F4CB;';
+    btn.addEventListener('click', () => {
+      navigator.clipboard.writeText(code).then(() => {
+        btn.innerHTML = '&#x2705;';
+        setTimeout(() => { btn.innerHTML = '&#x1F4CB;'; }, 2000);
+      });
+    });
+    p.append(btn);
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -124,6 +149,7 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   decorateButtons(main);
+  decoratePromoSection(main);
 }
 
 /**
