@@ -746,6 +746,35 @@ main .section.steps .cards .cards-card-body a:any-link {
   font-size: var(--body-font-size-xs);
 }
 
+/* Carousel navigation arrows */
+main .section.steps .cards .cards-carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+main .section.steps .cards .cards-carousel-nav button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: rgb(255 255 255 / 20%);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  padding: 0;
+}
+
+main .section.steps .cards .cards-carousel-nav button:hover {
+  background: rgb(255 255 255 / 40%);
+}
+
 @media (width >= 900px) {
   main .section.steps > .default-content-wrapper {
     padding: 60px 32px 0;
