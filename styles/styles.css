@@ -380,7 +380,7 @@ main .section.gradient {
   margin: 0;
   padding: 40px 0;
   border-radius: var(--border-radius-card);
-  max-width: var(--content-max-width);
+  max-width: calc(var(--content-max-width) * 0.8);
   margin-inline: auto;
 }
 
@@ -877,6 +877,12 @@ main .section.refund .columns a:any-link {
     min-height: 400px;
     padding: 48px;
   }
+}
+
+/* FAQ section */
+main .section.faq {
+  max-width: calc(var(--content-max-width) * 0.8);
+  margin-inline: auto;
 }
 
 /* Hide metadata block from rendering */
