@@ -640,7 +640,7 @@ main .section.steps {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  max-width: var(--content-max-width);
+  max-width: calc(var(--content-max-width) * 0.8);
   margin-inline: auto;
   padding: 0;
 }
@@ -755,14 +755,8 @@ main .section.steps .cards .cards-card-body a:any-link {
     padding: 24px 32px 60px;
   }
 
-  main .section.steps .cards > ul {
-    overflow-x: visible;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   main .section.steps .cards > ul > li {
-    flex: auto;
+    flex: 0 0 calc((100% - 32px) / 3);
   }
 }
 
