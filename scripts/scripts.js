@@ -139,11 +139,43 @@ function decoratePromoSection(main) {
 }
 
 /**
+ * Converts :icon-name: text patterns in block cells to icon span elements.
+ * Mimics the AEM content pipeline icon conversion for local development.
+ * @param {Element} main The main container element
+ */
+function convertTextIcons(main) {
+  const iconPattern = /^:([\w-]+):$/;
+  main.querySelectorAll('div > div > div').forEach((cell) => {
+    [...cell.childNodes].forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const match = node.textContent.trim().match(iconPattern);
+        if (match) {
+          const span = document.createElement('span');
+          span.classList.add('icon', `icon-${match[1]}`);
+          node.replaceWith(span);
+        }
+      } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'P' && node.childNodes.length === 1) {
+        const child = node.firstChild;
+        if (child.nodeType === Node.TEXT_NODE) {
+          const match = child.textContent.trim().match(iconPattern);
+          if (match) {
+            const span = document.createElement('span');
+            span.classList.add('icon', `icon-${match[1]}`);
+            child.replaceWith(span);
+          }
+        }
+      }
+    });
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
+  convertTextIcons(main);
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
