@@ -12,10 +12,10 @@
   flex-direction: column;
   justify-content: center;
   min-height: 300px;
-  max-height: 440px;
+  max-height: 500px;
   padding: 48px 16px;
   text-align: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* background image */
@@ -35,8 +35,9 @@
 .hero > div:last-child {
   position: relative;
   z-index: 1;
-  max-width: 700px;
+  max-width: 750px;
   margin: 0 auto;
+  overflow: visible;
 }
 
 .hero h1 {
@@ -45,7 +46,7 @@
   font-weight: 700;
   line-height: 1.2;
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 .hero p {
@@ -55,32 +56,179 @@
   margin-bottom: 16px;
 }
 
-.hero .button-wrapper {
-  margin-top: 8px;
+/* Search form */
+.hero-search {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgb(255 255 255 / 85%);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 8%);
+  text-align: left;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
-.hero a.button {
-  background-color: var(--link-color);
+.hero-search-field {
+  position: relative;
+}
+
+.hero-search-destination input {
+  width: 100%;
+  padding: 14px 44px 14px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: var(--body-font-family);
+  background: #fff;
+  color: var(--heading-color);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.hero-search-destination input:focus {
   border-color: var(--link-color);
-  color: var(--background-color);
-  border-radius: var(--border-radius-pill);
-  padding: 12px 32px;
-  font-size: var(--body-font-size-s);
 }
 
-.hero a.button:hover {
-  background-color: var(--link-hover-color);
-  border-color: var(--link-hover-color);
+.hero-search-destination input::placeholder {
+  color: #999;
+}
+
+.hero-search-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.hero-search-days-btn {
+  width: 100%;
+  padding: 14px 44px 14px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: var(--body-font-family);
+  background: #fff;
+  color: var(--heading-color);
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.hero-search-days-label {
+  flex: 1;
+}
+
+.hero-search-days-btn .hero-search-icon {
+  position: static;
+  transform: none;
+  margin-left: auto;
+}
+
+/* Dropdowns */
+.hero-search-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+}
+
+.hero-search-dropdown li {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--heading-color);
+}
+
+.hero-search-dropdown li:hover {
+  background: rgb(234 242 255);
+}
+
+/* Submit button */
+.hero-search-submit {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: var(--link-color);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--body-font-family);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.hero-search-submit:hover {
+  background: var(--link-hover-color);
+  color: #fff;
 }
 
 @media (width >= 900px) {
   .hero {
     min-height: 340px;
-    max-height: 440px;
+    max-height: 500px;
     padding: 56px 32px;
   }
 
   .hero h1 {
     font-size: 36px;
+  }
+
+  .hero-search {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 16px;
+    max-width: 700px;
+  }
+
+  .hero-search-destination {
+    flex: 2;
+  }
+
+  .hero-search-days {
+    flex: 1;
+  }
+
+  .hero-search-destination input,
+  .hero-search-days-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 40px 12px 16px;
+  }
+
+  .hero-search-destination input:focus {
+    border: none;
+    box-shadow: 0 0 0 2px var(--link-color);
+  }
+
+  .hero-search-submit {
+    width: auto;
+    padding: 12px 28px;
+    white-space: nowrap;
+    border-radius: 12px;
   }
 }

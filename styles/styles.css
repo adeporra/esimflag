@@ -533,8 +533,8 @@ main .section.destinations h2 {
 
 /* Destinations section - round flag icons */
 main .section.destinations .cards .cards-card-image {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
 }
 
