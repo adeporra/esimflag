@@ -568,6 +568,73 @@ main .section.benefits .cards .cards-card-body p strong {
   }
 }
 
+/* Features section - text overlaid on card images */
+main .section.features .cards > ul {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+main .section.features .cards > ul > li {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  min-height: 200px;
+}
+
+main .section.features .cards .cards-card-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+main .section.features .cards .cards-card-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.features .cards .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main .section.features .cards .cards-card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  min-height: 200px;
+  background: linear-gradient(to top, rgb(0 0 0 / 60%) 0%, rgb(0 0 0 / 20%) 60%, transparent 100%);
+}
+
+main .section.features .cards .cards-card-body p {
+  color: #fff;
+  margin: 0;
+}
+
+main .section.features .cards .cards-card-body p strong {
+  color: #fff;
+  font-size: var(--body-font-size-m);
+}
+
+@media (width >= 900px) {
+  main .section.features .cards > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  main .section.features .cards > ul > li {
+    min-height: 280px;
+  }
+
+  main .section.features .cards .cards-card-body {
+    min-height: 280px;
+  }
+}
+
 /* Hide metadata block from rendering */
 main .section.metadata-container {
   display: none;
