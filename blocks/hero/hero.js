@@ -76,13 +76,49 @@ function buildSearchForm(block) {
 
   daysWrapper.append(daysBtn, daysDropdown);
 
+  // eSIM quantity selector
+  const esimWrapper = document.createElement('div');
+  esimWrapper.className = 'hero-search-field hero-search-esims';
+
+  const esimBtn = document.createElement('button');
+  esimBtn.type = 'button';
+  esimBtn.className = 'hero-search-days-btn';
+
+  const esimLabel = document.createElement('span');
+  esimLabel.className = 'hero-search-days-label';
+  esimLabel.textContent = 'Nº eSIM';
+
+  const esimIcon = document.createElement('span');
+  esimIcon.className = 'hero-search-icon';
+  esimIcon.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M9 10h6M9 14h6"/></svg>';
+
+  esimBtn.append(esimLabel, esimIcon);
+
+  const esimDropdown = document.createElement('ul');
+  esimDropdown.className = 'hero-search-dropdown hero-search-esims-dropdown';
+  esimDropdown.hidden = true;
+
+  for (let i = 1; i <= 10; i += 1) {
+    const li = document.createElement('li');
+    li.textContent = `${i} eSIM`;
+    li.dataset.value = i;
+    li.addEventListener('click', () => {
+      esimLabel.textContent = `${i} eSIM`;
+      esimBtn.dataset.selected = i;
+      esimDropdown.hidden = true;
+    });
+    esimDropdown.append(li);
+  }
+
+  esimWrapper.append(esimBtn, esimDropdown);
+
   // View plan button
   const viewBtn = document.createElement('a');
   viewBtn.className = 'hero-search-submit';
   viewBtn.textContent = 'View plan';
   viewBtn.href = 'https://www.esimflag.com/en/destinations';
 
-  form.append(destWrapper, daysWrapper, viewBtn);
+  form.append(destWrapper, daysWrapper, esimWrapper, viewBtn);
 
   // Destination autocomplete logic
   let selectedSlug = '';
@@ -128,12 +164,20 @@ function buildSearchForm(block) {
   daysBtn.addEventListener('click', () => {
     daysDropdown.hidden = !daysDropdown.hidden;
     dropdown.hidden = true;
+    esimDropdown.hidden = true;
+  });
+
+  esimBtn.addEventListener('click', () => {
+    esimDropdown.hidden = !esimDropdown.hidden;
+    dropdown.hidden = true;
+    daysDropdown.hidden = true;
   });
 
   // Close dropdowns on outside click
   document.addEventListener('click', (e) => {
     if (!destWrapper.contains(e.target)) dropdown.hidden = true;
     if (!daysWrapper.contains(e.target)) daysDropdown.hidden = true;
+    if (!esimWrapper.contains(e.target)) esimDropdown.hidden = true;
   });
 
   // Remove existing subtitle and button, keep only h1

@@ -20,7 +20,24 @@ footer .footer > div > .section:first-child {
 }
 
 footer .footer > div > .section:first-child img {
-  height: 33px;
+  height: 50px;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+footer .footer .app-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+footer .footer .app-badges a {
+  display: block;
+}
+
+footer .footer .app-badges img {
+  height: 40px;
   width: auto;
 }
 
@@ -37,6 +54,7 @@ footer .footer ul li {
 footer .footer ul li strong {
   color: #000;
   font-size: var(--body-font-size-s);
+  font-weight: 600;
   display: block;
   margin-bottom: 12px;
 }
@@ -54,14 +72,19 @@ footer .footer a:hover {
 @media (width >= 900px) {
   footer .footer > div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 32px;
-    padding: 40px 32px 24px;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 60px 32px 40px;
   }
 
   footer .footer > div > .section:first-child {
-    grid-column: 1 / -1;
-    margin-bottom: 8px;
-    text-align: center;
+    grid-column: auto;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  footer .footer .app-badges {
+    flex-direction: row;
+    gap: 16px;
   }
 }

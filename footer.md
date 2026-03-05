@@ -1,5 +1,13 @@
 ![eSimFLAG](/icons/esimflag-logo.png)
 
+<div class="app-badges">
+
+[![Download on the App Store](https://www.esimflag.com/assets/app-store-CAMAmrMB.svg)](https://apps.apple.com/app/esimflag/id6467063685)
+
+[![Get it on Google Play](https://www.esimflag.com/assets/google-play-CsODxu_L.svg)](https://play.google.com/store/apps/details?id=com.esimflag)
+
+</div>
+
 ---
 
 - **Popular destinations**
