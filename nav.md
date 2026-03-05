@@ -1,4 +1,4 @@
-- [eSimFLAG](/)
+- [![eSimFLAG](/icons/esimflag-logo.png)](/)
 
 ---
 
