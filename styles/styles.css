@@ -458,8 +458,6 @@ main .section.single-esim .columns-img-col img {
 main .section.promo {
   margin: 0;
   padding: 16px 0;
-  background-color: #e0f7fa;
-  border-radius: var(--border-radius-card);
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -472,11 +470,8 @@ main .section.promo h2 {
 
 /* stylelint-disable-next-line no-descending-specificity */
 main .section.promo > div > p {
-  background:
-    radial-gradient(circle at 85% 15%, rgb(183 140 255) 0%, rgb(183 140 255 / 18%) 25%, transparent 55%),
-    radial-gradient(circle at 90% 90%, rgb(183 140 255 / 25%) 0%, transparent 40%),
-    linear-gradient(90deg, rgb(29 94 255) 0%, rgb(29 94 255) 15%, rgb(31 155 255) 60%, rgb(62 201 246) 100%);
-  color: #fff;
+  background-color: rgb(234 242 255);
+  color: var(--heading-color);
   border-radius: 18px;
   padding: 16px 24px;
   margin: 0;
@@ -499,7 +494,6 @@ main .section.promo > div > p:last-of-type {
   border-radius: 0 0 18px 18px;
   padding-top: 4px;
   font-size: var(--body-font-size-s);
-  opacity: 0.85;
 }
 
 main .section.promo > div > p:only-of-type {
@@ -507,15 +501,54 @@ main .section.promo > div > p:only-of-type {
 }
 
 main .section.promo p strong {
-  color: #fff;
+  color: var(--heading-color);
   font-size: 18px;
   font-weight: 500;
+}
+
+/* "All destinations" yellowish highlight */
+main .section.promo > div > p:first-of-type strong {
+  background-color: rgb(255 243 176);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Copy button for promo codes */
+main .section.promo .promo-copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 0 0 8px;
+  vertical-align: middle;
+  line-height: 1;
 }
 
 /* Destinations section */
 /* stylelint-disable-next-line no-descending-specificity */
 main .section.destinations h2 {
   text-align: center;
+}
+
+/* Destinations section - round flag icons */
+main .section.destinations .cards .cards-card-image {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+main .section.destinations .cards .cards-card-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+main .section.destinations .cards .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 /* Benefits section - 3x2 grid with icon cards */
@@ -526,17 +559,11 @@ main .section.benefits {
   background-image: url("https://main--esimflag--adeporra.aem.page/media_157befdc21c4da645f17a38016e1b5f8b8797e285.jpg");
   background-size: cover;
   background-position: center;
-  border-radius: 20px;
-  max-width: calc(var(--content-max-width) * 0.8);
-  margin-inline: auto;
+  margin: 0;
 }
 
 main .section.benefits::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgb(0 0 0 / 40%);
-  z-index: 0;
+  display: none;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -550,7 +577,7 @@ main .section.benefits h2 {
   text-align: center;
   font-size: var(--heading-font-size-l);
   margin-bottom: 24px;
-  color: #fff;
+  color: var(--heading-color);
 }
 
 main .section.benefits .cards > ul {
