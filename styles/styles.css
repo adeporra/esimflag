@@ -635,6 +635,137 @@ main .section.features .cards .cards-card-body p strong {
   }
 }
 
+/* Steps section - image background with step cards carousel */
+main .section.steps {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.steps h2 {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  font-size: var(--heading-font-size-l);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+main .section.steps > .default-content-wrapper {
+  padding: 40px 16px 0;
+}
+
+/* Background image covers the entire section */
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.steps .default-content-wrapper p:has(picture) {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  z-index: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.steps .default-content-wrapper p:has(picture) picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.steps .default-content-wrapper p:has(picture) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay on the image for contrast */
+main .section.steps::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 40%);
+  z-index: 1;
+}
+
+/* Cards carousel wrapper */
+main .section.steps > .cards-wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 24px 16px 40px;
+}
+
+/* Cards carousel */
+main .section.steps .cards > ul {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 8px;
+}
+
+/* Hide scrollbar */
+main .section.steps .cards > ul::-webkit-scrollbar {
+  display: none;
+}
+
+main .section.steps .cards > ul > li {
+  flex: 0 0 75%;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  min-height: auto;
+  box-shadow: var(--shadow-card);
+}
+
+main .section.steps .cards .cards-card-body p {
+  margin: 0;
+  color: var(--text-color);
+}
+
+main .section.steps .cards .cards-card-body p strong {
+  color: var(--heading-color);
+  font-size: var(--body-font-size-s);
+}
+
+main .section.steps .cards .cards-card-body p:last-child {
+  margin-top: 8px;
+  font-size: var(--body-font-size-xs);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.steps .cards .cards-card-body a:any-link {
+  color: var(--link-color);
+  font-size: var(--body-font-size-xs);
+}
+
+@media (width >= 900px) {
+  main .section.steps > .default-content-wrapper {
+    padding: 60px 32px 0;
+  }
+
+  main .section.steps > .cards-wrapper {
+    padding: 24px 32px 60px;
+  }
+
+  main .section.steps .cards > ul {
+    overflow-x: visible;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  main .section.steps .cards > ul > li {
+    flex: auto;
+  }
+}
+
 /* Hide metadata block from rendering */
 main .section.metadata-container {
   display: none;
