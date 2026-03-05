@@ -409,7 +409,7 @@ main .section.single-esim {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  max-width: var(--content-max-width);
+  max-width: calc(var(--content-max-width) * 0.8);
   margin-inline: auto;
 }
 
